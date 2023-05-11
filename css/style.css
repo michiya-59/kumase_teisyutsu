@@ -1,0 +1,1070 @@
+@charset "UTF-8";
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.6rem;
+}
+:root {
+  --black: #000;
+  --dark-black: #474342;
+  --skyblue: #26badf;
+  --green: #00a95f;
+  --white: #fff;
+  --light-green: #44ba8d;
+  --skyblue2: #66CEE7;
+  --light-gray: #938E8D;
+}
+main{
+  overflow: hidden;
+  display: flex;
+}
+article{
+  width: calc(100% - 30rem);
+  margin-left: auto;
+}
+img {
+  width: 100%;
+  height: auto;
+}
+ul {
+  list-style: none ;
+}
+a {
+  transition: all 0.3s ease;
+}
+a:hover{
+  opacity: 0.6;
+}
+.container-790 {
+  max-width: 79rem;
+  width: 100%;
+  margin: 0 auto;
+}
+.container-585 {
+  max-width: 58.5rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* 共通スタイル */
+.common-blue{
+  color: var(--skyblue);
+}
+.common-green{
+  color: var(--green);
+}
+.common-white{
+  color: var(--white);
+}
+.common-btn-blue{
+  color: var(--white);
+  background: var(--skyblue);
+  border: 2px solid var(--skyblue);
+}
+.common-btn-green{
+  color: var(--white);
+  background: var(--green);
+  border: 2px solid var(--green);
+}
+.common-btn-dark-black{
+  color: var(--white);
+  background: var(--dark-black);
+  border: 2px solid var(--dark-black);
+}
+.common-btn-light-green{
+  background: var(--white);
+  border: 2px solid var(--white);
+  color: var(--light-green);
+}
+.common-title{
+  font-family: "Florencesans SC";
+  font-size: 3rem;
+  letter-spacing: 0.26em;
+  line-height: 4.1rem;
+  text-align: center;
+  font-weight: bold;
+}
+.common-sub-title{
+  font-family: "A-OTF UD Shin Go Pr6N";
+  font-weight: normal;
+  font-size: 1.8rem;
+  letter-spacing: 0.26em;
+  line-height: 4.1rem;
+  text-align: center;
+}
+.common-btn{
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: block;
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 0.26em;
+  line-height: 6rem;
+  text-align: center;
+  font-family: "Florencesans SC";
+}
+.common-btn2{
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  letter-spacing: 0.26em;
+  text-align: center;
+  font-family: "A-OTF UD Shin Go Pr6N";
+  font-size: 1.8rem;
+  font-weight: normal;
+  line-height: 5.8rem;
+}
+.common-arrow{
+  width: 0.6rem;
+  position: absolute;
+  right: 0;
+  margin: 2.35rem 1.75rem 2.35rem 0;
+}
+.common-arrow2{
+  width: 0.7rem;
+  height: 1.5rem;
+  transform: scale(1.2);  
+  position: absolute;
+  right: 0;
+  margin: 2.35rem 1.75rem 2.35rem 0;
+}
+.common-font-14{
+  font-size: 1.4rem;
+  font-weight: normal;
+  letter-spacing: 0.2em;
+}
+.common-font-normal{
+  font-weight: normal;
+  text-align: left;
+}
+.common-border-blue{
+  border: 2px solid var(--skyblue);
+}
+.common-border-green{
+  border: 2px solid var(--green);
+}
+.common-border-right-green{
+  border-right: 2px solid var(--green);
+}
+.common-height-100{
+  height: 100%;
+}
+/* 共通スタイル */
+
+
+/* ヘッダー */
+header{
+  width: 30rem;
+  height: 100vh;
+  background: var(--white);
+  position: fixed;
+  display: flex;
+  z-index: 98;
+}
+.header{
+  width: 100%;
+  height: 100%;
+}
+.header-left{
+  display: flex;
+  flex-direction: column;
+  padding: 27.9rem 3.7rem 2.9rem 3.7rem;
+}
+.header-logo{
+  width: 14rem;
+  height: 18.7rem;
+  display: flex;
+  align-items: center; 
+  margin: 0 auto;
+}
+.header-hamburger{
+  margin: 8.8rem auto 3.7rem auto;
+  width: 3.6rem;
+  height: 3.1rem;
+  position: relative;
+  cursor: pointer;
+}
+.header-link-hamburger span{
+  width: 3.6rem;
+  height: 0.1rem;
+  background: var(--dark-black);
+  position: absolute;
+  transition: 0.5s;
+}
+.header-link-hamburger span:nth-of-type(2){
+  top: 0.7rem;
+}
+.header-link-hamburger span:nth-of-type(3){
+  top: 1.4rem;
+}
+.header-menu-open, .header-menu-close{
+  position: absolute;
+  top: 2.1rem;
+  font-family: "Hiragino Kaku Gothic ProN";
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+  color: var(--dark-black);
+}
+.header-menu-close{
+  display: none;
+}
+.header-hamburger.active .header-link-hamburger .header-menu-open{
+  display: none;
+}
+.header-hamburger.active .header-link-hamburger .header-menu-close{
+  display: block;
+}
+.header-mask{
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background: var(--white);
+  padding: 10rem 13.5rem 20rem 10rem;
+  transform: translateX(-200rem);
+  transition: 1s;
+}
+.header-mask-info{
+  display: flex;
+  margin-top: 9.8rem;
+  padding-left: 4.8rem;
+}
+.header-mask-menu{
+  margin-right: 10.3rem;
+  width: 17%;
+}
+.header-mask-menu2{
+  margin-right: 13.3rem;
+  width: 19.7%;
+}
+.header-mask-menu3{
+  padding-top: 13.3rem;
+  width: 17%;
+}
+.header-mask-menu-part{
+  margin-bottom: 4.5rem;
+}
+.header-mask-menu-part a, .header-mask-menu-part2 a{
+  text-decoration: none;
+}
+.header-mask-menu-part:hover a, .header-mask-menu-part2:hover a{
+  color: var(--light-gray);
+}
+.header-mask-menu-part2{
+  margin-bottom: 3rem;
+}
+.header-mask-menu-title{
+  font-family: "A-OTF UD Shin Go Pr6N";
+  font-weight: normal;
+  font-size: 2.2rem;
+  letter-spacing: 0.1em;
+  text-align: left;
+  color: var(--dark-black);
+  margin-bottom: 0.7rem;
+}
+.header-mask-menu-subtitle{
+  font-family: "Florencesans SC";
+  font-weight: normal;
+  font-size: 1.2rem;
+  letter-spacing: 0.4em;
+  text-align: left;
+  color: var(--dark-black);
+}
+.footer-mask-menu2{
+  margin-right: 13.3rem;
+}
+.header-mask.active{
+  transform: translateX(0);
+  transition: 1s;
+}
+.header-hamburger.active .header-link-hamburger span:nth-child(1) {
+  transform: translateY(0) rotate(405deg);
+  transition: 0.5s;
+}
+.header-hamburger.active .header-link-hamburger span:nth-child(2) {
+  opacity: 0;
+  transition: 0.5s;
+}
+.header-hamburger.active .header-link-hamburger span:nth-child(3) {
+  transform: translateY(-1.4rem) rotate(315deg);
+  transition: 0.5s;
+}
+.header-bottom{
+  margin-top: 7rem;
+  font-family: "A-OTF UD Shin Go Pr6N";
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  line-height: 2.3rem;
+}
+.header-tel{
+  margin: 1.2rem 0 0.8rem 0;
+}
+.header-link-tel, .header-link-mail{
+  display: flex;
+  height: 1.5rem;
+  align-items: center;
+  color: var(--black);
+  text-decoration: none;
+}
+.header-link-tel img, .header-link-mail img{
+  width: 1.5rem;
+  margin-right: 2.1rem;
+}
+
+/* ヘッダー */
+
+/* メインビジュアル */
+.mainvisual{
+  background-image: url('../image/main_visual_img.jpg');
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+.mailvisual-img{
+  padding: 32rem 0 34rem 0;
+  text-align: center;
+}
+
+.mainvisual-text{
+  font-family: "A-OTF UD Shin Go Pr6N";
+  font-weight: normal;
+  font-size: 3.6rem;
+  letter-spacing: 0.26em;
+  line-height: 3rem;
+  margin-bottom: 3.5rem;
+}
+.mainvisual-scroll-down{
+  position: absolute;
+  top: 87%;
+  left: 47%;
+}
+.mainvisual-scroll-down span{
+  font-family: "Hiragino Kaku Gothic ProN";
+  font-size: 1.1rem;
+  letter-spacing: 0.46em;
+  line-height: 4.6rem;
+  color: var(--black);
+  font-weight: bold;
+}
+/* 線の描写 */
+.mainvisual-scroll-down:after {
+  content: "";
+  /*描画位置*/
+  position: absolute;
+  /*線の形状*/
+  width: 0.1rem;
+  height: 9.4rem; 
+  background: var(--black);
+  top: 6rem;
+  left: 47%;
+}
+/* 丸の描写 */
+.mainvisual-scroll-down:before {
+  content: "";
+  /*描画位置*/
+  position: absolute;
+  bottom: 0;
+  /*丸の形状*/
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  background: var(--black);
+  /*丸の動き1.6秒かけて透過し、永遠にループ*/
+  animation: circlemove 1.6s ease-in-out infinite, cirlemovehide 1.6s ease-out infinite;
+  top: 6rem;
+  left: 41%;
+}
+/*下からの距離が変化して丸の全体が上から下に動く*/
+@keyframes circlemove {
+  0% {
+    top: 5rem;
+  }
+  100% {
+    top: 15rem;
+  }
+}
+/*上から下にかけて丸が透過→不透明→透過する*/
+@keyframes cirlemovehide {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/* メインビジュアル */
+
+/* お約束 */
+.statement{
+  background-image: url('../image/v-statement.png');
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  padding-top: 13.2rem;
+}
+.statement-content{
+  width: 50rem;
+  height: 50rem;
+  background: var(--white);
+  margin: 0 auto;
+  padding: 6.8rem 6.4rem 5.6rem;
+}
+.statement-line{
+  margin: 3.1rem auto;
+  text-align: center;
+  display: block;
+  width: 1.5rem;
+  height: 0;
+  background: var(--skyblue);
+  border: 1px solid var(--skyblue);
+}
+.statement-text{
+  font-family: "A-OTF UD Shin Go Pr6N";
+  line-height: 3rem;
+  text-align: center;
+  color: var(--dark-black);
+}
+.statement-btn{
+  width: 30rem;
+  height: 6rem;
+  margin: 5.4rem auto 0 auto;
+}
+
+/* お約束 */
+
+/* お知らせ */
+.information-container{
+  border-top: 2px solid #01a95f;
+  border-bottom: 2px solid #01a95f;
+  margin-top: 13.1rem;
+  padding: 8.2rem 2.95rem 10.6rem 2.6rem;
+}
+.information-content{
+  margin-top: 5.9rem;
+  display: flex;
+  flex-direction: column;
+}
+.information-part{
+  display: flex;
+  align-items: center;
+  margin-top: 1.2rem;
+}
+.information-part:nth-of-type(2) .information-title{
+  opacity: 0.75;
+}
+.information-date{
+  font-family: "Florencesans SC";
+  text-align: left;
+  border: 0.2px solid var(--white);
+  width: 13%;
+  margin-right: 3.3rem;
+}
+.information-title{
+  width: 14%;
+  height: 2.8rem;
+  text-align: center;
+  margin-right: 2rem;
+  font-size: 1.2rem;
+  line-height: 2.4rem;
+}
+.information-text{
+  width: 54%;
+  font-family: "A-OTF UD Shin Go Pr6N";
+  text-align: left;
+  color: var(--black);
+}
+.information-link-content{
+  width: 12%;
+}
+.information-link{
+  font-family: "Florencesans SC";
+  font-size: 1.4rem;
+  letter-spacing: 0.26em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+}
+.information-link:after{
+  content: url('../image/btn_arrow_green.svg');
+  position: absolute;
+  margin-left: 1.7rem;
+  top: -0.2rem;
+}
+/* お知らせ */
+
+/* ピックアップ */
+.pick-up{
+  margin-top: 14.4rem;
+}
+.pick-up-content{
+  margin-top: 6rem;
+}
+.pick-up-part1, .pick-up-part2, .pick-up-part3{
+  height: 20rem;
+  padding: 6.6rem 0 6rem 4.4rem;
+  position: relative;
+  background-size: cover;
+  margin-bottom: 5.1rem;
+}
+.pick-up-part1{
+  background-image: url('../image/img01.png');
+}
+.pick-up-part2{
+  background-image: url('../image/img02new.webp');
+}
+.pick-up-part3{
+  background-image: url('../image/img03.png');
+}
+.pick-up-text{
+  font-family: "A-OTF UD Shin Go Pr6N";
+  letter-spacing: 0.26em;
+  line-height: 2.7rem;
+  margin-bottom: 1rem;
+}
+.pick-up-text:nth-child(1){
+  font-size: 1.6rem;
+}
+.pick-up-text:nth-child(2){
+  font-size: 2.8rem;
+}
+.pick-up-part2 .pick-up-text:nth-child(2){
+  font-size: 3rem;
+}
+.pick-up-part3 .pick-up-text{
+  font-size: 2.9rem;
+  letter-spacing: 0.2rem;
+  margin-bottom: 2rem;
+}
+.pick-up-link{
+  width: 22rem;
+  height: 6rem;
+  position: absolute;
+  bottom: -2.7rem;
+  left: 0;
+}
+.pick-up-link a{
+  opacity: 1;
+}
+/* ピックアップ */
+
+/* クオリティー */
+.quality{
+  margin-top: 21.2rem;
+}
+.quality-content{
+  display: flex;
+  flex-direction: column;
+  margin-top: 5.5rem;
+}
+.quality-part{
+  display: flex;
+  width: 100%;
+  padding: 1.8rem;
+  margin-bottom: 5rem;
+  transition: .5s;
+}
+.quality-left{
+  width: 26.6rem;
+  height: 26.6rem;
+  margin-right: 5.1rem;
+}
+.quality-right{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.quality-content a{
+  text-decoration: none;
+  opacity: 1;
+}
+.quality-content a:hover .common-border-blue{
+  background: var(--skyblue);
+  transition: .5s;
+}
+.quality-content a:hover .common-border-green{
+  background: var(--green);
+  transition: .5s;
+}
+.quality-content a:hover .quality-part .quality-right p{
+  color: var(--white);
+}
+.quality-title{
+  font-family: "A-OTF UD Shin Go Pr6N";
+  font-size: 2.6rem;
+  letter-spacing: 0.26em;
+}
+.quality-sub-title{
+  font-family: "A-OTF UD Shin Go Pr6N";
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+}
+.quality-text{
+  font-family: "A-OTF UD Shin Go Pr6N";
+  line-height: 2.8rem;
+}
+/* クオリティー */
+
+/* その他強み */
+.strong-point{
+  margin-top: 13.3rem;
+}
+.strong-point-content{
+  margin-top: 5.5rem;
+}
+.strong-point-top{
+  display: flex;
+  border-bottom: 2px solid var(--green);
+}
+.strong-point-link:hover{
+  background-color: var(--green);
+  color: var(--white);
+  opacity: 1;
+}
+.strong-point-top .strong-point-link{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3.6rem 0 3.9rem 0;
+  text-decoration: none;
+}
+.strong-point-part1, .strong-point-part2, .strong-point-part3, .strong-point-part4, .strong-point-part5{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.strong-point-img{
+  width: 3.9rem;
+  height: 3.4rem;
+  margin-bottom: 1rem;
+  line-height: 5.4rem;
+}
+.strong-point-link .strong-point-img svg path {
+  fill: none;
+  stroke: var(--green);
+}
+.strong-point-link:hover .strong-point-img svg path {
+  stroke: var(--white);
+}
+.strong-point-link .strong-point-img svg path,
+.strong-point-link .strong-point-img svg line,
+.strong-point-link .strong-point-img svg rect {
+  fill: none;
+  stroke: var(--green);
+}
+.strong-point-link:hover .strong-point-img svg path,
+.strong-point-link:hover .strong-point-img svg line,
+.strong-point-link:hover .strong-point-img svg rect {
+  stroke: #ffffff;
+}
+.strong-point-part2 .strong-point-img{
+  width: 2.8rem;
+  line-height: 4.4rem;
+}
+.strong-point-bottom{
+  display: flex;
+}
+.strong-point-title{
+  font-family: "A-OTF UD Shin Go Pr6N";
+  font-size: 2rem;
+  letter-spacing: 0.26em;
+  margin-bottom: 0.5rem;
+}
+.strong-point-link:hover .strong-point-title,
+.strong-point-link:hover .strong-point-subtitle{
+  color: var(--white);
+}
+.strong-point-subtitle{
+  font-family: "A-OTF UD Shin Go Pr6N";
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+}
+.strong-point-bottom .strong-point-link{
+  width: calc(100% / 3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3.6rem 0 3.9rem 0;
+  text-decoration: none;
+}
+.strong-point-part3 .strong-point-img{
+  width: 3.6rem;
+}
+.strong-point-part4 .strong-point-img{
+  width: 2.43rem;
+}
+.strong-point-part5 .strong-point-img{
+  width: 3.4rem;
+}
+/* その他強み */
+
+/* 医者紹介 */
+.docker{
+  margin-top: 18.3rem;
+}
+.docker-content{
+  display: flex;
+  margin-top: 6.6rem;
+}
+.docker-left, .docker-right{
+  width: 50%;
+}
+.docker-img{
+  position: relative;
+  margin-bottom: 4.6rem;
+  height: 26rem;
+}
+.docker-link{
+  width: 22rem;
+  height: 6rem;
+  position: absolute;
+  bottom: -2.7rem;
+}
+.docker-link a{
+  opacity: 1;
+}
+.docker-link a img{
+  height: 1.3rem;
+}
+.docker-content-common{
+  font-family: "A-OTF UD Shin Go Pr6N";
+  font-weight: normal;
+  font-size: 1.4rem;
+  letter-spacing: 0.2em;
+  text-align: left;
+}
+.docker-position{
+  margin-bottom: 0.5rem;
+}
+.docker-name{
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+.docker-kind{
+  width: 30.3rem;
+  line-height: 2.4rem;
+}
+/* 医者紹介 */
+
+/* メッセージ */
+.message{
+  display: flex;
+  background-image: url('../image/v-recruit.png');
+  background-size: cover;
+  margin-top: 15.8rem;
+}
+.message-content{
+  display: flex;
+  padding: 10.2rem 5.6rem 9.2rem 9rem;
+}
+.message-left{
+  margin-right: 11.7rem;
+}
+.message-title{
+  font-family: "Florencesans SC";
+  font-size: 1.4rem;
+  letter-spacing: 0.26em;
+  margin-bottom: 1.5rem;
+  color: var(--white);
+}
+.message-subtitle{
+  font-family: "A-OTF UD Shin Go Pr6N";
+  font-size: 2.6rem;
+  letter-spacing: 0.26em;
+  color: var(--white);
+  line-height: 5rem;
+}
+.message-text{
+  font-family: "A-OTF UD Shin Go Pr6N";
+  line-height: 3.6rem;
+  text-align: left;
+  letter-spacing: 0.26em;
+  color: var(--white);
+}
+.message-link{
+  width: 30rem;
+  height: 6rem;
+  font-family: "Florencesans SC";
+  text-align: center;
+  margin-top: 4.05rem;
+}
+.message-link a svg path{
+  fill: none;
+  stroke: var(--green);
+}
+.message-link a:hover{
+  color: var(--white);
+  background-color: var(--green);
+  border: 2px solid var(--green);
+  opacity: 1;
+}
+.message-link a:hover svg path{
+  fill: none;
+  stroke: var(--white);
+}
+svg path 
+/* メッセージ */
+
+/* アクセス */
+.access-text-common{
+  font-family: "A-OTF UD Shin Go Pr6N";
+  font-size: 1.6rem;
+  letter-spacing: 0.2rem;
+  font-weight: normal;
+  text-align: left;
+}
+.access{
+  margin-top: 14.1rem;
+}
+.access-content{
+  position: relative;
+}
+.access-address-top{
+  background-color: var(--skyblue);
+  padding: 5.8rem 0 6.8rem 0;
+  width: 64rem;
+  height: 26rem;
+  margin: 0 auto;
+  position: inherit;
+  z-index: 2;
+}
+.access-line{
+  display: block;
+  width: 1.5rem;
+  height: 0;
+  background: var(--white);
+  border: 1px solid var(--white);
+  margin: 2.15rem auto 3.45rem auto;
+}
+.access-address{
+  font-family: "A-OTF UD Shin Go Pr6N";
+  text-align: center;
+}
+.access-address-bottom{
+  position: absolute;
+  bottom: 0;
+  height: 42.1rem;
+  width: 100%;
+  top: 13.9rem;
+}
+.access-address-bottom iframe{
+  width: 100%;
+  height: 100%;
+}
+.access-sales-info{
+  margin-top: 39rem;
+}
+.access-sales-bottom{
+  padding-left: 1.7rem;
+  margin-top: 4.4rem;
+}
+.access-reception-content{
+  display: flex;
+  margin-bottom: 3rem;
+}
+.access-reception-time,
+.access-closed-day{
+  width: 14%;
+  margin-right: 5.5rem;
+
+}
+.access-reception-time-detail,
+.access-closed-week{
+  letter-spacing: 0.1em;
+}
+.access-sales-time-top{
+  margin-bottom: 1.6rem;
+}
+.access-text-common{
+  font-family: "A-OTF UD Shin Go Pr6N";
+  font-size: 1.6rem;
+  letter-spacing: 0.2rem;
+  font-weight: normal;
+  text-align: left;
+}
+.access-reservation-time{
+  margin-bottom: 3rem;
+}
+.access-closed-day-content{
+  display: flex;
+  margin-bottom: 7.1rem;
+}
+.access-btn{
+  width: 58.4rem;
+  height: 6rem;
+}
+.access-btn a{
+  font-family: "A-OTF UD Shin Go Pr6N";
+  font-size: 1.8rem;
+  font-weight: normal;
+  line-height: 5.8rem;
+}
+.access-btn a img{
+  width: 0.7rem;
+  height: 1.5rem;
+  transform: scale(1.2);
+}
+/* アクセス */
+
+/* お問い合わせ */
+.contact{
+  margin-top: 12.3rem;
+}
+.contact-tel-info{
+  margin-top: 7.05rem;
+}
+.contact-common-text{
+  font-family: "A-OTF UD Shin Go Pr6N";
+  font-weight: normal;
+  font-size: 1.6rem;
+  letter-spacing: 0.2em;
+  text-align: center;
+  position: relative;
+}
+.contact-common-text.green::before{
+  content: '';
+  position: absolute;
+  width: 21.1rem;
+  height: 0.8rem;
+  background: var(--green);
+  opacity: 0.2;
+  bottom: 0.2rem;
+}
+.contact-common-text.blue{
+  margin-top: 7.1rem;
+}
+.contact-common-text.blue::before{
+  content: '';
+  position: absolute;
+  width: 29.5rem;
+  height: 0.8rem;
+  background: var(--skyblue);
+  opacity: 0.2;
+  bottom: 0.2rem;
+}
+.contact-tel-content{
+  text-align: center;
+  margin-top: 3rem;
+}
+.contact-tel{
+  font-family: "Florencesans SC";
+  font-weight: bold;
+  font-size: 4.3rem;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+}
+.contact-tel-reception-time{
+  font-family: "A-OTF UD Shin Go Pr6N";
+  font-weight: normal;
+  font-size: 1.4rem;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+.contact-net-info{
+  margin-top: 9rem;
+}
+.contact-btn{
+  margin-top: 2.55rem;
+}
+/* お問い合わせ */
+
+/* 初察 */
+.consultation{
+  margin-top: 12.3rem;
+  margin-bottom: 16.2rem;
+}
+.consultation-belongings{
+  margin-top: 4.5rem;
+  border-top: 2px solid var(--skyblue);
+  border-bottom: 2px solid var(--skyblue);
+  padding: 3.5rem 0 3.5rem 2.5rem;
+}
+.consultation-text{
+  font-family: "A-OTF UD Shin Go Pr6N";
+  font-size: 1.6rem;
+  letter-spacing: 0.2em;
+}
+.consultation-text:not(:first-child){
+  margin-top: 1.2rem;
+}
+.consultaion-notes{
+  font-family: "A-OTF UD Shin Go Pr6N";
+  line-height: 2.6rem;
+  margin: 3.5rem 0;
+}
+/* 初察 */
+
+/* フッター */
+footer{
+  height: 38rem;
+}
+.footer{
+  background-image: url('../image/footer-image.jpg');
+  background-size: cover;
+  display: flex;
+  position: relative;
+  height: 100%;
+  padding: 9.2rem 0 9.9rem 7.1rem;
+}
+.footer-left{
+  width: 26.4rem;
+  height: 3.6rem;
+  margin-right: 12.5rem;
+}
+.footer-menu{
+  display: flex;
+}
+.footer-menu-left{
+  margin-right: 10.6rem;
+}
+ul li{
+  font-family: "Hiragino Kaku Gothic ProN";
+  font-weight: normal;
+  font-size: 1.1rem;
+  letter-spacing: 0.12em;
+  text-align: left;
+}
+ul li a{
+  color: var(--dark-black);
+  text-decoration: none;
+}
+ul li:not(:first-child){
+  margin-top: 2.3rem;
+}
+.footer-li-skyblue{
+  color: var(--skyblue2);
+}
+.footer-copy-right{
+  font-family: "Hiragino Kaku Gothic ProN";
+  position: absolute;
+  bottom: 20%;
+  font-weight: normal;
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+  text-align: left;
+  color: var(--dark-black);
+}
+/* フッター */
+.br-sp{
+  display: none;
+}
+.br-pc {
+}
