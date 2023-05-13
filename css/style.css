@@ -12,8 +12,10 @@ body {
   --green: #00a95f;
   --white: #fff;
   --light-green: #44ba8d;
+  --light-green2: #82cca0;
   --skyblue2: #66CEE7;
   --light-gray: #938E8D;
+  --light-blue: #8bd6ec;
 }
 main{
   overflow: hidden;
@@ -76,6 +78,14 @@ a:hover{
   background: var(--white);
   border: 2px solid var(--white);
   color: var(--light-green);
+}
+.common-btn-light-blue:hover{
+  background-color: var(--light-blue);
+  border: 2px solid var(--light-blue);
+}
+.common-btn-light-green2:hover{
+  background-color: var(--light-green2);
+  border: 2px solid var(--light-green2);
 }
 .common-title{
   font-family: "Florencesans SC";
@@ -230,7 +240,7 @@ header{
   left: 100%;
   background: var(--white);
   padding: 10rem 13.5rem 20rem 10rem;
-  transform: translateX(-200rem);
+  transform: translateX(-400rem);
   transition: 1s;
 }
 .header-mask-info{
