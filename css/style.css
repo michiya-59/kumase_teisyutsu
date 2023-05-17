@@ -148,7 +148,7 @@ a:hover{
 .common-font-14{
   font-size: 1.4rem;
   font-weight: normal;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.05em;
 }
 .common-font-normal{
   font-weight: normal;
@@ -166,8 +166,18 @@ a:hover{
 .common-height-100{
   height: 100%;
 }
+.top-back-btn{
+  width: 5.4rem;
+  height: 5.4rem;
+  bottom: 0;
+  right: 0;
+  margin: 2%;
+  position: fixed;
+  cursor: pointer;
+  opacity: 0; /* 初期状態ではボタンを完全に透明にする */
+  transition: opacity 0.5s; /* 透明度の変化に0.5秒かける */
+}
 /* 共通スタイル */
-
 
 /* ヘッダー */
 header{
@@ -242,6 +252,9 @@ header{
   padding: 10rem 13.5rem 20rem 10rem;
   transform: translateX(-400rem);
   transition: 1s;
+}
+.header-mask-sp{
+  display: none;
 }
 .header-mask-info{
   display: flex;
@@ -329,7 +342,12 @@ header{
   width: 1.5rem;
   margin-right: 2.1rem;
 }
-
+.header-left-sp{
+  display: none;
+}
+.header-hamburger-sp{
+  display: none;
+}
 /* ヘッダー */
 
 /* メインビジュアル */
@@ -630,6 +648,9 @@ header{
   font-family: "A-OTF UD Shin Go Pr6N";
   line-height: 2.8rem;
 }
+.quality-sp-link{
+  display: none;
+}
 /* クオリティー */
 
 /* その他強み */
@@ -780,6 +801,7 @@ header{
   background-image: url('../image/v-recruit.png');
   background-size: cover;
   margin-top: 15.8rem;
+  justify-content: center;
 }
 .message-content{
   display: flex;
@@ -932,6 +954,9 @@ svg path
   height: 1.5rem;
   transform: scale(1.2);
 }
+.access-sales-top img:nth-child(2){
+  display: none;
+}
 /* アクセス */
 
 /* お問い合わせ */
@@ -1024,7 +1049,7 @@ svg path
 
 /* フッター */
 footer{
-  height: 38rem;
+  height: auto;
 }
 .footer{
   background-image: url('../image/footer-image.jpg');
@@ -1044,6 +1069,19 @@ footer{
 }
 .footer-menu-left{
   margin-right: 10.6rem;
+}
+.header-mask-sp{
+  display: block;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background: var(--white);
+  padding: 10rem 13.5rem 20rem 10rem;
+  transform: translateX(-400rem);
+  transition: 1s;
 }
 ul li{
   font-family: "Hiragino Kaku Gothic ProN";
@@ -1073,8 +1111,583 @@ ul li:not(:first-child){
   color: var(--dark-black);
 }
 /* フッター */
+
+/* レスポンシブ */
+@media (max-width: 540px) {
+  main{
+    flex-direction: row;
+  }
+  header{
+    width: 100%;
+    height: 9.2rem;
+  }
+  .header{
+    display: flex;
+    align-items: center;
+  }
+  .header-top, .header-left, .header-bottom{
+    display: none;
+  }
+  .header-left-sp{
+    display: block;
+    width: 8.5rem;
+    height: 6.3rem;
+    margin: 1.5rem 0;
+    margin-left: auto;
+  }
+  .header-hamburger-sp{
+    display: block;
+    width: 3.6rem;
+    height: 1.4rem;
+    position: relative;
+    cursor: pointer;
+    margin-left: 11rem;
+    margin-right: 2rem;
+  }
+  .header-mask-sp {
+    transform: translateX(-300rem);
+    overflow: auto;
+  }
+  .header-line-sp{
+    width: 4rem;
+    height: 0;
+    border: 0.5px solid var(--dark-black);
+    margin-top: 3.6rem;
+  }
+  .header-mask-sp.active{
+    transform: translateX(-426px);
+    transition: 1s;
+    overflow: auto;
+  }
+  .header-hamburger-sp.active .header-link-hamburger span:nth-child(1) {
+    transform: translateY(0) rotate(405deg);
+    transition: 0.5s;
+  }
+  .header-hamburger-sp.active .header-link-hamburger span:nth-child(2) {
+    opacity: 0;
+    transition: 0.5s;
+  }
+  .header-hamburger-sp.active .header-link-hamburger span:nth-child(3) {
+    transform: translateY(-1.4rem) rotate(315deg);
+    transition: 0.5s;
+  }
+
+  .header-left-sp, .header-hamburger-sp{
+    z-index: 3;
+  }
+  .header-mask-sp{
+    padding: 11rem 5rem 0 5rem;
+  }
+  .header-mask-info{
+    flex-direction: column;
+    padding: 0;
+    margin-top: 6.1rem;
+  }
+  .header-mask-menu, .header-mask-menu2, .header-mask-menu3{
+    width: 100%;
+  }
+  .header-mask-menu3{
+    padding-top: 4rem;
+  }
+  article{
+    width: 100%;
+  }
+
+  /* 共通部品 */
+  .common-title{
+    font-size: 2.7rem;
+  }
+  .common-sub-title{
+    font-size: 1.6rem;
+  }
+  .common-btn{
+    line-height: 37px;
+  }
+  .common-arrow{
+    margin: 1.2rem 1rem 0 0;
+  }
+  .top-back-btn{
+    width: 5.4rem;
+    height: 5.4rem;
+    bottom: 0;
+    right: 0;
+    margin: 2%;
+    position: fixed;
+    cursor: pointer;
+    opacity: 0; /* 初期状態ではボタンを完全に透明にする */
+    transition: opacity 0.5s; /* 透明度の変化に0.5秒かける */
+  }
+  /* 共通部品 */
+
+  /* メインビジュアル */
+  .mailvisual-img{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    padding-top: 36.2rem;
+  }
+  .mainvisual-text{
+    font-size: 2.8rem;
+  }
+  .mainvisual-text:nth-of-type(1){
+    margin-bottom: 2.6rem;
+  }
+  .mainvisual-scroll-down{
+    top: 88%;
+    left: 45%;
+  }
+  /* メインビジュアル */
+
+  /* お約束 */
+  .statement{
+    padding: 8rem 3.5rem;
+    height: auto;
+  }
+  .statement-content{
+    width: 100%;
+    height: auto;
+    padding: 3rem 1.5rem;
+    z-index: 2;
+    position: relative;
+    background: #ffffff85;
+  }
+  .statement-line{
+    margin: 2.5rem auto;
+  }
+  .statement-btn{
+    margin-top: 3rem;
+    width: auto;
+  }
+  .statement-btn a{
+    line-height: 6rem;
+  }
+  .statement-btn a img{
+    margin: 2.35rem 1.75rem 2.35rem 0;
+  }
+  /* お約束 */
+
+  /* お知らせ */
+  .information{
+    padding: 0 3.5rem;
+  }
+  .information-container{
+    margin-top: 8.1rem;
+    padding: 8rem 0;
+  }
+  .information-content{
+    margin-top: 3rem;
+  }
+  .information-part{
+    position: relative;
+    align-items: start;
+    flex-direction: column;
+    justify-content: left;
+  }
+  .information-date, .information-title{
+    width: auto;
+    margin-bottom: 1rem;
+  }
+  .information-title{
+    width: 32%;
+  }
+  .information-text{
+    width: 21.7rem;
+    margin-bottom: 1.6rem;
+  }
+  .information-link-content{
+    position: absolute;
+    right: 2.4rem;
+    top: 72%;
+    width: auto;
+  }
+  .information-link:after{
+    right: -2rem;
+  }
+  /* お知らせ */
+
+  /* ピックアップ */
+  .pick-up{
+    margin-top: 8.4rem;
+    padding: 0 3.5rem;
+  }
+  .pick-up-content{
+    margin-top: 4.54rem;
+  }
+  .pick-up-part1, .pick-up-part2, .pick-up-part3{
+    height: 15rem;
+    padding: 2.5rem 1.5rem 0 1.5rem;
+    background-position: right;
+  }
+  .pick-up-part2, .pick-up-part3{
+    padding-top: 4rem;
+  }
+  .pick-up-text:nth-child(1){
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+  .pick-up-text:nth-child(2){
+    font-size: 2rem;
+  }
+  .pick-up-part2 .pick-up-text:nth-child(2){
+    font-size: 2rem;
+  }
+  .pick-up-link{
+    width: 50%;
+    height: 4rem;
+    bottom: -2rem;
+  }
+  .pick-up-part3 .pick-up-text{
+    font-size: 1.8rem;
+    letter-spacing: 0.05em;
+  }
+  /* ピックアップ */
+
+  /* クオリティー */
+  .quality{
+    margin-top: 10.3rem;
+  }
+  .quality-content{
+    padding: 0 3.5rem;
+  }
+  .quality-part{
+    height: auto;
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+  .quality-left{
+    width: 100%;
+    height: 17rem;
+    margin: 0;
+  }
+  .quality-left img{
+    object-fit: cover;
+    height: 100%;
+  }
+  .quality-title{
+    font-size: 1.8rem;
+    margin: 2rem 0 0.7rem 0;
+  }
+  .quality-sub-title{
+    margin-bottom: 2rem;
+  }
+  .quality-text{
+    letter-spacing: 0.25em;
+    margin-bottom: 1.95rem;
+  }
+  .quality-sp-link{
+    display: block;
+    text-align: right;
+    padding-right: 2.1rem;
+  }
+  .quality-sp-link img{
+    margin: 1.3rem 0 0 0;
+  }
+  /* クオリティー */
+
+  /* その他強み */
+  .strong-point-content{
+    margin: 6.8rem 3.5rem 0 3.5rem;
+  }
+  .strong-point-top{
+    height: 21rem;
+  }
+  .strong-point-top .strong-point-link:nth-of-type(1){
+    padding: 2.6rem 0 2.75rem 0;
+  }
+  .strong-point-top .strong-point-link:nth-of-type(2){
+    padding: 2.6rem 1.9rem 2.75rem 1.9rem;
+  }
+  .strong-point-bottom{
+    flex-wrap: wrap;
+  }
+  .strong-point-title{
+    font-size: 1.8rem;
+  }
+  .strong-point-bottom .strong-point-link{
+    width: 50%;
+    padding: 2.9rem 0;
+    height: 21rem;
+  }
+  .strong-point-bottom .strong-point-link:nth-of-type(2){
+    border-right: 0;
+  }
+  .strong-point-bottom .strong-point-link:nth-of-type(3){
+    width: 100%;
+    border-top: 2px solid var(--green);
+    padding-bottom: 2.7rem;
+  }
+  .strong-point-part1 .strong-point-title{
+    margin-bottom: 2.7rem;
+  }
+  .strong-point-part2 .strong-point-img{
+    line-height: 2.4rem;
+    margin: 0;
+  }
+  .strong-point-part3 .strong-point-img, .strong-point-part4 .strong-point-img{
+    margin-bottom: 1rem;
+  }
+  .strong-point-part3 .strong-point-title{
+    margin-bottom: 2rem;
+  }
+  .strong-point-title, .strong-point-subtitle{
+    text-align: center;
+  }
+  .strong-point-part4 .strong-point-title{
+    line-height: 2.6rem;
+  }
+  .strong-point-part5 .strong-point-img{
+    margin-bottom: 1.7rem;
+  }
+  .strong-point-sp1, .strong-point-sp2, .strong-point-sp3, .strong-point-sp4, .strong-point-sp5{
+    line-height: 0;
+    margin-top: 6%;
+    margin-left: 7%;
+  }
+  .strong-point-sp1{
+    margin-top: 13%;
+  }
+  .strong-point-sp4{
+    margin-top: 11%;
+  }
+  .strong-point-sp5{
+    margin-left: 0%;
+  }
+  .strong-point-sp1 img, .strong-point-sp2 img, .strong-point-sp3 img, .strong-point-sp4 img, .strong-point-sp5 img{
+    margin: 1rem 0 0 0;
+    position: initial;
+  }
+  /* その他強み */
+
+  /* 医者紹介 */
+  .docker{
+    margin-top: 10.3rem;
+  }
+  .docker-content{
+    margin-top: 4.5rem;
+    flex-direction: column;
+    padding: 3.5rem;
+  }
+  .docker-left, .docker-right{
+    width: 100%;
+  }
+  .docker-right{
+    margin-top: 6rem;
+  }
+  .docker-link{
+    width: 51.5%;
+    height: 4rem;
+    bottom: -2rem;
+  }
+  /* 医者紹介 */
+
+  /* メッセージ */
+  .message{
+    margin-top: 10rem;
+  }
+  .message-content{
+    flex-direction: column;
+    padding: 8.2rem 3.5rem 10rem 3.5rem;
+  }
+  .message-left{
+    margin: 0;
+  }
+  .message-subtitle{
+    font-size: 2.4rem;
+    margin-bottom: 3rem;
+  }
+  .message-text{
+    margin-bottom: 5.2rem;
+  }
+  .message-link{
+    margin: 0;
+    width: 100%;
+  }
+  .message-link .common-btn{
+    line-height: 5.7rem;
+  }
+  .message-link .common-btn .common-arrow{
+    margin: 2.35rem 1.75rem 2.35rem 0;
+  }
+  /* メッセージ */
+
+  /* アクセス */
+  .access-address-top{
+    width: 83%;
+    margin: 0 3.5rem;
+    padding: 3.3rem;
+    height: 24rem;
+  }
+  .access-line{
+    margin: 2.5rem auto;
+  }
+  .access-address-bottom{
+    height: 30.2rem;
+    top: 12.9rem;
+  }
+  .access-sales-info{
+    margin-top: 27rem;
+    padding: 0 3.5rem;
+  }
+  .access-sales-top{
+    height: 20rem;
+  }
+  .access-sales-top img:nth-child(1){
+    display: none;
+  }
+  .access-sales-top img:nth-child(2){
+    display: block;
+  }
+  .access-sales-bottom{
+    padding: 0;
+    margin-top: 7rem;
+  }
+  .access-reception-content, .access-closed-day-content{
+    flex-direction: column;
+  }
+  .access-closed-day-content{
+    margin-bottom: 6rem;
+  }
+  .access-text-common{
+    font-size: 1.4rem;
+  }
+  .access-reception-time{
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  .access-reception-time-detail{
+    font-size: 1.4rem;
+  }
+  .access-closed-day{
+    margin-bottom: 0.5rem;
+  }
+  .access-btn{
+    margin: 0;
+    width: 100%;
+  }
+  .access-btn a{
+    font-size: 1.4rem;
+    letter-spacing: 0.15em;
+    text-align: left;
+    padding-left: 1.5rem;
+  }
+  .access-btn a img{
+    margin: 2.2rem 1.5rem 0 1.1rem;
+  }
+  /* アクセス */
+  
+  /* お問い合わせ */
+  .contact{
+    margin-top: 9.5rem;
+  }
+  .contact-tel-info{
+    margin-top: 6rem;
+    padding: 0 3.5rem;
+  }
+  .contact-tel-content{
+    margin-bottom: 2.9rem;
+  }
+  .contact-tel{
+    font-size: 2.6rem;
+  }
+  .contact-net-info{
+    margin-top: 7.5rem;
+    padding: 0 3.5rem;
+  }
+  /* お問い合わせ */
+
+  /* 初診 */
+  .consultation{
+    margin-bottom: 12rem;
+  }
+  .consultation-belongings{
+    margin: 3.5rem 3.5rem 0 3.5rem;
+    padding: 4rem 0;
+  }
+  .consultation-text{
+    font-size: 1.4rem;
+  }
+  .consultaion-notes{
+    margin: 6rem 3.5rem;
+  }
+  .contact-btn{
+    padding: 0 3.5rem;
+  }
+  .contact-btn a{
+    font-size: 1.4rem;
+  }
+  /* 初診 */
+
+  /* フッター */
+  .footer{
+    flex-direction: column;
+    padding: 6.3rem 5.1rem 4rem 5.1rem;
+    background-position: top;
+  }
+  .footer-left{
+    margin: 0 auto;
+    width: 29rem;
+  }
+  .footer-right{
+    margin-top: 4.4rem;
+  }
+  .footer-menu-left{
+    width: 44%;
+    margin-right: 5.8rem;
+  }
+  .footer-li-skyblue{
+    color: var(--dark-black);
+  }
+  .footer-menu-right{
+    width: 37%;
+  }
+  .footer-copy-right{
+    display: block;
+    position: initial;
+    width: 100%;
+    margin: 5.5rem 0 4rem 0;
+    text-align: center;
+  }
+  /* フッター */
+
+}
+@media (max-width: 376px) {
+  .common-title{
+    font-size: 2.3rem;
+  }
+  .strong-point-title{
+    font-size: 1.6rem;
+  }
+  .strong-point-part2 .strong-point-subtitle{
+    font-size: 1.1rem;
+    margin-bottom: 0.7rem;
+  }
+  .contact-tel{
+    font-size: 2.5rem;
+  }
+  .consultation-text{
+    font-size: 1.2rem;
+  }
+}
+/* レスポンシブ */
 .br-sp{
   display: none;
 }
-.br-pc {
+.span-sp{
+  display: none;
+}
+@media (max-width: 540px){
+  .br-sp{
+    display: block;
+  }
+  .br-pc{
+    display: none;
+  }
+  .span-sp{
+    display: block;
+  }
+}
+
+.visible {
+  opacity: 1;
 }
